@@ -4,18 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace ApplicationServices.States
 {
     public class User
     {
         public Guid Guid { get; set; }
         public string Name { get; set; }
-        public ICollection<UserPost> Posts { get; set; }
-        public User(Guid guid, string name, List<UserPost> posts)
+        public User(Guid guid, string name)
         {
             Guid = guid;
             Name = name;
-            Posts = posts;
         }
     }
 }

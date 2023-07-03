@@ -7,9 +7,9 @@
         char EndOfMessage { get; set; }
         public StreamHandler(Stream stream, int bufferSize, char endOfMessage)
         {
-            this.Stream = stream;
-            this.BufferSize = bufferSize;
-            this.EndOfMessage = endOfMessage;
+            Stream = stream;
+            BufferSize = bufferSize;
+            EndOfMessage = endOfMessage;
         }
         public byte[] ReadMessage()
 #warning Повторное использование приведёт к утере данных при окончании чтения сообщения не в tempBuffer.Length - 1

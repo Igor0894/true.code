@@ -1,40 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ApplicationServices;
+using Core.Entities;
 
 namespace Web.Controllers
 {
     [ApiController]
-    [Route("car-shop")]
+    [Route("")]
     public class MessageController : Controller
     {
-        private readonly ICarShopService _carShopService;
-        public MessageController(ICarShopService carShopService)
+        private readonly IMessageService _messageService;
+        public MessageController(IMessageService messageService)
         {
-            _carShopService = carShopService;
+            _messageService = messageService;
         }
 
-        [HttpGet("get-all")]
-        public async Task<CarShopState[]> GetCarShops()
+        [HttpGet("LastPostsByUser")]
+        public async Task<UserPost[]> GetLastPostsByUser(int count, Guid userGuid)
         {
-            var carShops = await _carShopService.GetCarShops();
-            return carShops;
+            var lastPostsByUser = await _messageService.GetLastPostsByUser(count, userGuid);
+            return lastPostsByUser;
         }
         
-        [HttpPost("add")]
-        public async Task<IResult> AddCarShop(CarShopModel model)
+        [HttpGet("LastPosts")]
+        public async Task<UserPost[]> GetLastPosts(int count)
         {
-            return await _carShopService.AddCarShop(model);
-        }
-        
-        [HttpPost("{carShopId}/add-car")]
-        public async Task<IResult> AddCar(Guid carShopId, CarModel model)
-        {
-            return await _carShopService.AddCar(carShopId, model);
-        }
-        [HttpGet("{carShopId}/get-cars")]
-        public async Task<CarState[]> GetCars(Guid carShopId)
-        {
-            var cars = await _carShopService.GetCars(carShopId);
-            return cars;
+            var lastPosts = await _messageService.GetLastPosts(count);
+            return lastPosts;
         }
     }
 }

@@ -8,9 +8,8 @@ using Core.Entities;
 
 namespace ApplicationServices
 {
-    public interface IMessageService
+    public interface IMessageFeeder
     {
-        Task<UserPost[]> GetLastPostsByUser(int count, Guid userGuid);
-        Task<UserPost[]> GetLastPosts(int count);
+        public Task<User[]> GetPosts();
     }
 }

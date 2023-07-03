@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageReader", "MessageReader\MessageReader.csproj", "{405A67A6-BE2E-4CA0-A896-8FB720314ED0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageReader", "MessageReader\MessageReader.csproj", "{405A67A6-BE2E-4CA0-A896-8FB720314ED0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationServices", "ApplicationServices\ApplicationServices.csproj", "{29C3BD5A-1D02-413E-8AB5-635BF38B35A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationServices", "ApplicationServices\ApplicationServices.csproj", "{29C3BD5A-1D02-413E-8AB5-635BF38B35A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{81B8CD86-0846-44AE-BB6B-623CBFCA9127}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{81B8CD86-0846-44AE-BB6B-623CBFCA9127}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationServices.Tests", "ApplicationServices.Tests\ApplicationServices.Tests.csproj", "{F23A29BA-EDBE-4BA4-8029-6D8F2E0C1B96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{81B8CD86-0846-44AE-BB6B-623CBFCA9127}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81B8CD86-0846-44AE-BB6B-623CBFCA9127}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81B8CD86-0846-44AE-BB6B-623CBFCA9127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F23A29BA-EDBE-4BA4-8029-6D8F2E0C1B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F23A29BA-EDBE-4BA4-8029-6D8F2E0C1B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F23A29BA-EDBE-4BA4-8029-6D8F2E0C1B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F23A29BA-EDBE-4BA4-8029-6D8F2E0C1B96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
