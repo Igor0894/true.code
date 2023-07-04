@@ -25,11 +25,13 @@ namespace ApplicationServices
         public async Task<UserPost[]> GetLastPosts(int count)
         {
             var allPosts = await _messageFeeder.GetPosts();
-            var topPostsAllUsers = allPosts.Where(u => u.Posts != null)
+            foreach (var post in allPosts)
+            {
+                post.Posts = post.Posts.OrderByDescending(p => p.PublishTime).Take(1).ToList();
+            }
+            var topPostsAllUsersByCount = allPosts.Where(u => u.Posts != null)
                 .SelectMany(u => u.Posts)
-                .OrderByDescending(p => p.PublishTime).Take(1);
-
-            var topPostsAllUsersByCount = topPostsAllUsers.OrderByDescending(p => p.PublishTime).Take(count);
+                .OrderByDescending(p => p.PublishTime).Take(count);
             return topPostsAllUsersByCount.ToArray();
         }
     }
