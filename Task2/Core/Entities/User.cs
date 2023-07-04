@@ -10,12 +10,12 @@ namespace Core.Entities
     {
         public Guid Guid { get; set; }
         public string Name { get; set; }
-        public ICollection<UserPost> Posts { get; set; }
-        public User(Guid guid, string name, List<UserPost> posts)
+        public List<UserPost> Posts { get; set; }
+        public User(Guid guid, string name)
         {
             Guid = guid;
             Name = name;
-            Posts = posts;
+            Posts = new List<UserPost>();
         }
     }
 }

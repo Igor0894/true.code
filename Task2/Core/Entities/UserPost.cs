@@ -9,13 +9,13 @@ namespace Core.Entities
     public class UserPost
     {
         public Guid Guid { get; set; }
-        public User User { get; set; }
+        public Guid UserGuid { get; set; }
         public DateTime PublishTime { get; set; }
         public string Message { get; set; }
-        public UserPost(Guid guid, User user, DateTime publishTime, string message)
+        public UserPost(Guid guid, Guid userGuid, DateTime publishTime, string message)
         {
             Guid = guid;
-            User = user;
+            UserGuid = userGuid;
             PublishTime = publishTime;
             Message = message;
         }
